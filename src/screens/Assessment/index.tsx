@@ -103,7 +103,7 @@ export function AssessmentPage({ initialAssessment, onComplete }: AssessmentPage
     <Layout>
       <div className="max-w-4xl mx-auto">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold mb-2">Governance Assessment</h1>
+          <h1 className="text-2xl font-bold mb-2">Governance Self-Assessment Prototype</h1>
           <p className="text-gray-600 mb-4">
             {assessment.organization.name} - {assessment.organization.sector}
           </p>

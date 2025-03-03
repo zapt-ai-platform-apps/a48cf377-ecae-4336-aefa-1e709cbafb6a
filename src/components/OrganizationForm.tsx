@@ -38,12 +38,12 @@ export function OrganizationForm({ onSubmit }: OrganizationFormProps) {
 
   return (
     <div className="max-w-xl mx-auto">
-      <h2 className="text-2xl font-semibold mb-6">About Your Organization</h2>
+      <h2 className="text-2xl font-semibold mb-6">About Your Organisation</h2>
       {formError && <p className="mb-4 text-sm text-red-600">{formError}</p>}
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-            Organization Name
+            Organisation Name
           </label>
           <input
             type="text"
@@ -75,7 +75,7 @@ export function OrganizationForm({ onSubmit }: OrganizationFormProps) {
 
         <div>
           <label htmlFor="size" className="block text-sm font-medium text-gray-700 mb-1">
-            Organization Size
+            Organisation Size
           </label>
           <select
             id="size"
@@ -94,7 +94,7 @@ export function OrganizationForm({ onSubmit }: OrganizationFormProps) {
 
         <div>
           <label htmlFor="maturity" className="block text-sm font-medium text-gray-700 mb-1">
-            Organization Maturity
+            Organisation Maturity
           </label>
           <select
             id="maturity"

@@ -37,10 +37,9 @@ export function Home({ onStartAssessment, onContinueAssessment }: HomeProps) {
     <Layout>
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold mb-4">Charity Governance Assessment Tool</h1>
+          <h1 className="text-3xl font-bold mb-4">Charity Governance Self-Assessment Prototype</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Evaluate and strengthen your charity's governance arrangements through this
-            structured self-assessment tool.
+            Evaluate and strengthen your charity's governance arrangements with tailored guidance. Whether your organisation is a formal charity, requiring strict adherence to Charity Commission provisions, or a community group benefiting from a flexible, low-bureaucracy approach, this self-assessment tool is designed to meet your needs.
           </p>
         </div>
         
@@ -48,8 +47,8 @@ export function Home({ onStartAssessment, onContinueAssessment }: HomeProps) {
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-4">Start New Assessment</h2>
             <p className="text-gray-600 mb-6">
-              Complete a comprehensive governance assessment for your charity by providing
-              information about your organization.
+              Complete a comprehensive self-assessment for your organisation by providing
+              information about your organisation.
             </p>
             <OrganizationForm onSubmit={handleStartAssessment} />
           </div>
@@ -57,7 +56,7 @@ export function Home({ onStartAssessment, onContinueAssessment }: HomeProps) {
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-4">Previous Assessments</h2>
             <p className="text-gray-600 mb-6">
-              Continue or review your previous governance assessments.
+              Continue or review your previous governance self-assessments.
             </p>
             <AssessmentHistory 
               assessments={assessments} 

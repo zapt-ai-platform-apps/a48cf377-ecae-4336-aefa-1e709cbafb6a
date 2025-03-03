@@ -26,13 +26,21 @@ export function AssessmentSummary({ assessment, onStartNew }: AssessmentSummaryP
     return Array.from(categories);
   };
 
+  const formalConstitutions = [
+    "Charitable Trust",
+    "Charitable Incorporated Organisation (CIO)",
+    "Charitable Company Limited by Guarantee",
+    "Royal Charter Body"
+  ];
+  const isFormal = formalConstitutions.includes(assessment.organization.constitution);
+
   return (
     <div className="max-w-3xl mx-auto">
       <div className="bg-white shadow-md rounded-lg p-6 mb-6">
         <h2 className="text-2xl font-semibold mb-4">Assessment Summary</h2>
         
         <div className="mb-6">
-          <h3 className="text-lg font-medium mb-2">Organization Details</h3>
+          <h3 className="text-lg font-medium mb-2">Organisation Details</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <p className="text-sm text-gray-500">Name</p>
@@ -58,6 +66,17 @@ export function AssessmentSummary({ assessment, onStartNew }: AssessmentSummaryP
               <p className="text-sm text-gray-500">Completed On</p>
               <p className="font-medium">{formattedDate}</p>
             </div>
+          </div>
+          <div className="mt-4">
+            {isFormal ? (
+              <p className="text-sm text-gray-700">
+                As your organisation is a formal charity, please ensure that all governance arrangements comply with the requirements set out by the Charity Commission.
+              </p>
+            ) : (
+              <p className="text-sm text-gray-700">
+                As your organisation is not a formal charity, you benefit from a flexible, low-bureaucracy approach while still maintaining clear and effective governance practices.
+              </p>
+            )}
           </div>
         </div>
         
