@@ -1,14 +1,14 @@
 import React from 'react';
 import { Conversation } from '../models/assessment';
 import { Question } from '../models/question';
-import FeedbackCard from './FeedbackCard';
+import { FeedbackCard } from './FeedbackCard';
 
 interface ConversationHistoryProps {
   conversations: Conversation[];
   questions: Record<string, Question>;
 }
 
-const ConversationHistory: React.FC<ConversationHistoryProps> = ({ conversations, questions }) => {
+export function ConversationHistory({ conversations, questions }: ConversationHistoryProps) {
   if (conversations.length === 0) {
     return <p className="text-center text-gray-500 my-8">No conversation history yet.</p>;
   }
@@ -49,6 +49,4 @@ const ConversationHistory: React.FC<ConversationHistoryProps> = ({ conversations
       })}
     </div>
   );
-};
-
-export default ConversationHistory;
+}

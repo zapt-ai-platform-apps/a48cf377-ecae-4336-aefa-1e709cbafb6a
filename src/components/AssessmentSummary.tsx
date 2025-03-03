@@ -7,7 +7,7 @@ interface AssessmentSummaryProps {
   onStartNew: () => void;
 }
 
-const AssessmentSummary: React.FC<AssessmentSummaryProps> = ({ assessment, onStartNew }) => {
+export function AssessmentSummary({ assessment, onStartNew }: AssessmentSummaryProps) {
   const date = new Date(assessment.completedAt || assessment.startedAt);
   const formattedDate = date.toLocaleDateString('en-GB', {
     day: 'numeric',
@@ -99,6 +99,4 @@ const AssessmentSummary: React.FC<AssessmentSummaryProps> = ({ assessment, onSta
       </div>
     </div>
   );
-};
-
-export default AssessmentSummary;
+}

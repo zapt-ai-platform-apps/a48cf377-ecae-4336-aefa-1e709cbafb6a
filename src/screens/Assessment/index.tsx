@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import Layout from '../components/Layout';
-import QuestionCard from '../components/QuestionCard';
-import FeedbackCard from '../components/FeedbackCard';
-import ProgressBar from '../components/ProgressBar';
-import ConversationHistory from '../components/ConversationHistory';
-import AssessmentSummary from '../components/AssessmentSummary';
-import { useAssessment } from '../hooks/useAssessment';
-import { Assessment as AssessmentType } from '../models/assessment';
-import { Question } from '../models/question';
-import { questions } from '../data/questions';
-import { saveAssessment, clearCurrentAssessment } from '../utils/storage';
+import { Layout } from '../../components/Layout';
+import { QuestionCard } from '../../components/QuestionCard';
+import { FeedbackCard } from '../../components/FeedbackCard';
+import { ProgressBar } from '../../components/ProgressBar';
+import { ConversationHistory } from '../../components/ConversationHistory';
+import { AssessmentSummary } from '../../components/AssessmentSummary';
+import { useAssessment } from '../../hooks/useAssessment';
+import { Assessment as AssessmentType } from '../../models/assessment';
+import { questions } from '../../data/questions';
+import { saveAssessment, clearCurrentAssessment } from '../../utils/storage';
+import { Question } from '../../models/question';
 
 interface AssessmentPageProps {
   initialAssessment?: AssessmentType;
   onComplete: () => void;
 }
 
-const AssessmentPage: React.FC<AssessmentPageProps> = ({ initialAssessment, onComplete }) => {
+export function AssessmentPage({ initialAssessment, onComplete }: AssessmentPageProps) {
   const { 
     assessment, 
     submitAnswer, 
@@ -173,6 +173,4 @@ const AssessmentPage: React.FC<AssessmentPageProps> = ({ initialAssessment, onCo
       </div>
     </Layout>
   );
-};
-
-export default AssessmentPage;
+}

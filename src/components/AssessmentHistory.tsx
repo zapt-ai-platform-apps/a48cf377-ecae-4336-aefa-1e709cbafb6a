@@ -6,7 +6,7 @@ interface AssessmentHistoryProps {
   onSelectAssessment: (assessmentId: string) => void;
 }
 
-const AssessmentHistory: React.FC<AssessmentHistoryProps> = ({ assessments, onSelectAssessment }) => {
+export function AssessmentHistory({ assessments, onSelectAssessment }: AssessmentHistoryProps) {
   if (assessments.length === 0) {
     return (
       <div className="text-center p-8">
@@ -81,6 +81,4 @@ const AssessmentHistory: React.FC<AssessmentHistoryProps> = ({ assessments, onSe
       </table>
     </div>
   );
-};
-
-export default AssessmentHistory;
+}

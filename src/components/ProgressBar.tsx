@@ -5,7 +5,7 @@ interface ProgressBarProps {
   showPercentage?: boolean;
 }
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ progress, showPercentage = true }) => {
+export function ProgressBar({ progress, showPercentage = true }: ProgressBarProps) {
   return (
     <div className="w-full">
       <div className="w-full bg-gray-200 rounded-full h-2.5 mb-1">
@@ -19,6 +19,4 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress, showPercentage = tr
       )}
     </div>
   );
-};
-
-export default ProgressBar;
+}

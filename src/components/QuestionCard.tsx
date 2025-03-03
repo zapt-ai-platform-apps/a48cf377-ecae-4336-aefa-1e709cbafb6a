@@ -7,7 +7,7 @@ interface QuestionCardProps {
   loading?: boolean;
 }
 
-const QuestionCard: React.FC<QuestionCardProps> = ({ question, onSubmit, loading = false }) => {
+export function QuestionCard({ question, onSubmit, loading = false }: QuestionCardProps) {
   const [answer, setAnswer] = useState('');
   const [error, setError] = useState<string | null>(null);
 
@@ -34,9 +34,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({ question, onSubmit, loading
           <textarea
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
-            className={`box-border w-full p-3 border rounded-md ${
-              error ? 'border-red-500' : 'border-gray-300'
-            }`}
+            className={`box-border w-full p-3 border rounded-md ${error ? 'border-red-500' : 'border-gray-300'}`}
             rows={4}
             placeholder="Type your answer here..."
             disabled={loading}
@@ -66,6 +64,4 @@ const QuestionCard: React.FC<QuestionCardProps> = ({ question, onSubmit, loading
       </form>
     </div>
   );
-};
-
-export default QuestionCard;
+}

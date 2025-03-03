@@ -4,7 +4,7 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+export function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 flex flex-col">
       <header className="bg-white shadow-sm">
@@ -47,6 +47,4 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </footer>
     </div>
   );
-};
-
-export default Layout;
+}

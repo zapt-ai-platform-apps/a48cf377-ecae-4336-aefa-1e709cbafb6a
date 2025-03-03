@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
-import Home from './pages/Home';
-import AssessmentPage from './pages/Assessment';
+import Home from './screens/Home';
+import AssessmentPage from './screens/Assessment';
 import { Assessment } from './models/assessment';
 import { getCurrentAssessment, getAssessments } from './utils/storage';
 
-const App: React.FC = () => {
+function App() {
   const [view, setView] = useState<'home' | 'assessment'>('home');
   const [currentAssessment, setCurrentAssessment] = useState<Assessment | undefined>(undefined);
 
@@ -52,6 +52,6 @@ const App: React.FC = () => {
       )}
     </div>
   );
-};
+}
 
 export default App;

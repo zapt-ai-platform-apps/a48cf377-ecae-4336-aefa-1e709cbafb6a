@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import Layout from '../components/Layout';
-import OrganizationForm from '../components/OrganizationForm';
-import AssessmentHistory from '../components/AssessmentHistory';
-import { Organization } from '../models/organization';
-import { Assessment } from '../models/assessment';
-import { useAssessment } from '../hooks/useAssessment';
-import { getAssessments, saveAssessment } from '../utils/storage';
+import { Layout } from '../../components/Layout';
+import { OrganizationForm } from '../../components/OrganizationForm';
+import { AssessmentHistory } from '../../components/AssessmentHistory';
+import { Organization } from '../../models/organization';
+import { Assessment } from '../../models/assessment';
+import { useAssessment } from '../../hooks/useAssessment';
+import { getAssessments } from '../../utils/storage';
 
 interface HomeProps {
   onStartAssessment: (assessment: Assessment) => void;
   onContinueAssessment: (assessmentId: string) => void;
 }
 
-const Home: React.FC<HomeProps> = ({ onStartAssessment, onContinueAssessment }) => {
+export function Home({ onStartAssessment, onContinueAssessment }: HomeProps) {
   const [assessments, setAssessments] = useState<Assessment[]>([]);
   const { startAssessment } = useAssessment();
   
@@ -68,6 +68,4 @@ const Home: React.FC<HomeProps> = ({ onStartAssessment, onContinueAssessment }) 
       </div>
     </Layout>
   );
-};
-
-export default Home;
+}

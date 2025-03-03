@@ -6,7 +6,7 @@ interface FeedbackCardProps {
   type: 'perspective' | 'suggestion';
 }
 
-const FeedbackCard: React.FC<FeedbackCardProps> = ({ title, content, type }) => {
+export function FeedbackCard({ title, content, type }: FeedbackCardProps) {
   const bgColor = type === 'perspective' ? 'bg-indigo-50' : 'bg-green-50';
   const borderColor = type === 'perspective' ? 'border-indigo-200' : 'border-green-200';
   const titleColor = type === 'perspective' ? 'text-indigo-800' : 'text-green-800';
@@ -35,6 +35,4 @@ const FeedbackCard: React.FC<FeedbackCardProps> = ({ title, content, type }) => 
       </div>
     </div>
   );
-};
-
-export default FeedbackCard;
+}

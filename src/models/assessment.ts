@@ -123,3 +123,12 @@ export function completeAssessment(assessment: Assessment): Assessment {
     progress: 100
   };
 }
+
+/**
+ * Calculates and updates the progress of an assessment based on answered questions.
+ */
+export function calculateProgress(assessment: Assessment, totalQuestions: number): Assessment {
+  const answeredCount = assessment.answers.length;
+  const progress = Math.min(Math.round((answeredCount / totalQuestions) * 100), 100);
+  return updateProgress(assessment, progress);
+}

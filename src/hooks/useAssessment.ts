@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Assessment, createAssessment, addConversation, addAnswer, updateCurrentQuestion, updateProgress, completeAssessment } from '../models/assessment';
+import { Assessment, createAssessment, addConversation, addAnswer, updateCurrentQuestion, completeAssessment, calculateProgress } from '../models/assessment';
 import { Organization } from '../models/organization';
 import { Answer, createAnswer } from '../models/question';
 import { saveAssessment, getCurrentAssessment } from '../utils/storage';
-import { getFirstQuestion, getQuestionById, getNextQuestion } from '../data/questions';
+import { getFirstQuestion, getQuestionById, getNextQuestion, questions } from '../data/questions';
 
 export function useAssessment() {
   const [assessment, setAssessment] = useState<Assessment | undefined>(undefined);
@@ -65,12 +65,8 @@ export function useAssessment() {
       // Get next question
       const nextQuestion = getNextQuestion(currentQuestion.id);
       
-      // Update progress
-      const totalQuestions = Object.keys(getQuestionById).length;
-      const answeredCount = updatedAssessment.answers.length;
-      const progress = Math.min(Math.round((answeredCount / totalQuestions) * 100), 100);
-      
-      updatedAssessment = updateProgress(updatedAssessment, progress);
+      // Update progress using model logic
+      updatedAssessment = calculateProgress(updatedAssessment, Object.keys(questions).length);
       
       if (nextQuestion) {
         // Move to next question
