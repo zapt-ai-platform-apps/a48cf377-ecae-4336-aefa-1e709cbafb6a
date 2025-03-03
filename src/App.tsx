@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
-import Home from './screens/Home';
-import AssessmentPage from './screens/Assessment';
+import { Home } from './screens/Home';
+import { AssessmentPage } from './screens/Assessment';
 import { Assessment } from './models/assessment';
 import { getCurrentAssessment, getAssessments } from './utils/storage';
 
